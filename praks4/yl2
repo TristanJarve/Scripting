@@ -1,0 +1,33 @@
+#!/bin/bash
+#start
+#
+#The goal of this script is to calculate the amount of cookies cooks need to cook a cookie cake given certain parameters.
+
+#The variable names in this are horrible but I'm too lazy to fix it right now.
+
+#Data about the tray
+echo -n "Please enter the lenght and width of the cooking tray (in cm): "
+read tlenght twidth
+
+#Data about the cookies
+echo -n "Please enter the lenght and width of the cookies (in cm): "
+read clenght cwidth
+echo -n "How many cookies are there in one pack?"
+read amount
+
+#How many layers?
+echo -n "How many layers do you want for the cake?"
+read layersAmount
+
+
+#Calculations
+tray=`expr $tlenght \* $twidth` #area of the tray
+cookie=`expr $clenght \* $cwidth` #area of a cookie
+layer=`expr $layersAmount / $cookie` #how many cookies in a layer
+cookieAmount=`expr $layer \* $amount` #how many cookies in the cake
+packetAmount=`expr $cookieAmount % $amount` #how many packs for the cake
+extraCookies=`expr $cookieAmount % $amount` #how many extra cookies to you need? 
+
+#Answer
+echo "You need $packetAmount packs of cookies and $extraCookies cookies!"
+
