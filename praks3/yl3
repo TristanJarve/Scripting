@@ -1,0 +1,7 @@
+#!/bin/bash
+#start
+#
+#The goal of this script is to display the uptime of the machine
+
+
+echo `hostname` "at" `date +"%H:%M:%S"` "has been" `uptime -p`
