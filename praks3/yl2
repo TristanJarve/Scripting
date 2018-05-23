@@ -7,8 +7,4 @@
 #This script displays every .log file in the var directory in a decreasing order.
 #The order is decided by the amount of lines there are in the file.
 
-find /var/ -name "*.log" -exec wc -l {} + | sort -rn
-
-
-
-#find /var/ -name "*.log" -exec cat {} \ -exec wc -l {} + ; | sort
+find /var/ -name "*.log" 2>> /dev/null -exec wc -l {} + | sort -rn
