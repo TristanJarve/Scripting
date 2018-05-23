@@ -21,13 +21,13 @@ read layersAmount
 
 
 #Calculations
-tray=`expr $tlenght \* $twidth` #area of the tray
-cookie=`expr $clenght \* $cwidth` #area of a cookie
-layer=`expr $layersAmount / $cookie` #how many cookies in a layer
-cookieAmount=`expr $layer \* $amount` #how many cookies in the cake
-packetAmount=`expr $cookieAmount % $amount` #how many packs for the cake
-extraCookies=`expr $cookieAmount % $amount` #how many extra cookies to you need? 
+trayArea=`expr $tlenght \* $twidth` 
+cookieArea=`expr $clenght \* $cwidth` 
+layerArea=`expr $trayArea / $cookieArea`
+cookiesNeeded=`expr $layerArea \* $layersamount` 
+packetAmount=`expr $cookiesNeeded / $amount` 
+extraCookies=`expr $cookiesNeeded % $amount` 
 
 #Answer
-echo "You need $packetAmount packs of cookies and $extraCookies cookies!"
+echo "You need $packetAmount packs of cookies and $extraCookies cookies on top of that!"
 
