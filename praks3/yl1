@@ -1,0 +1,14 @@
+#!/bin/bash
+#algus 
+
+#Day
+echo -n "Today is "
+date  +"%A, %B %d, %Y"
+
+#Time
+date +"Time is %T" 
+
+#Calendar
+echo -n "Calendar of:"
+echo ""
+cal
