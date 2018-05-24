@@ -7,27 +7,28 @@
 
 #Data about the tray
 echo -n "Please enter the lenght and width of the cooking tray (in cm): "
-read tlenght twidth
+read -r tlenght twidth
 
 #Data about the cookies
 echo -n "Please enter the lenght and width of the cookies (in cm): "
-read clenght cwidth
+read -r clenght cwidth
 echo -n "How many cookies are there in one pack?"
-read amount
+read -r amount
 
 #How many layers?
 echo -n "How many layers do you want for the cake?"
-read layersAmount
+read -r layersAmount
 
 
 #Calculations
-trayArea=`expr $tlenght \* $twidth` 
-cookieArea=`expr $clenght \* $cwidth` 
-layerArea=`expr $trayArea / $cookieArea`
-cookiesNeeded=`expr $layerArea \* $layersamount` 
-packetAmount=`expr $cookiesNeeded / $amount` 
-extraCookies=`expr $cookiesNeeded % $amount` 
+trayArea=$($tlenght \* $twidth) 
+cookieArea=$($clenght \* $cwidth) 
+layerArea=$($trayArea / $cookieArea)
+cookiesNeeded=$( $layerArea \* $layersAmount) 
+packetAmount=$($cookiesNeeded / $amount) 
+extraCookies=$($cookiesNeeded % $amount) 
 
 #Answer
 echo "You need $packetAmount packs of cookies and $extraCookies cookies on top of that!"
+
 
