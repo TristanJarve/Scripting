@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+#This script calculates stuff with triangles
+
+echo -n "Please enter the value for side a: "
+read -r a
+echo -n "Please enter the value for side b: "
+read -r b
+
+#Squared
+a2=$(($a * $a))
+b2=$(($b * $b))
+c2=$(($a2 + $b2))
+
+#c calcuting
+c=`echo "scale=2;sqrt($c2)" | bc`
+
+#c is
+echo "c = $c"
+
+
+
