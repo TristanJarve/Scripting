@@ -1,0 +1,12 @@
+#!/bin/bash
+#
+#Start
+#
+
+echo -n "How many are there in the group?  "
+read travelers
+echo -n "How many seats are there in the bus?  "
+read seats
+LeftBehind=`expr $travelers % $seats`
+echo "The amount that is left behind is $LeftBehind since there isn't enough space."
+
